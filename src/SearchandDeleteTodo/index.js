@@ -6,16 +6,9 @@ import { ClearCompleteTodo } from '../ClearCompleteTodo';
 const SearchandDeleteTodo = (props, ) => {
     return (
         <li className="options">
-        <TodoCounter   
-        />
-
-            <Filter
-
-
-
-            />
-
-        <ClearCompleteTodo/>
+         <TodoCounter/>
+         <Filter/>
+         <ClearCompleteTodo/>
 
         </li>
     );
