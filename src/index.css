@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root{
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* Light Theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue-dt: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue-dt: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue-dt: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue-dtj: hsl(237, 14%, 26%);
+
+
+}
+#root{
+  
+  margin: auto;
+  position: relative;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family:'Josefin Sans', sans-serif;
+  background: hsl(235, 21%, 11%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.BgdarkMode{
+  background:  hsl(235, 21%, 11%);
+}
+
+
+.BglightMode{
+
+  background: hsl(236, 33%, 92%);
+}
+
+.BglightMode .footer{
+  color: var(--Dark-Grayish-Blue);
+}
+
+
+
+.container { 
+  position: inherit;
+  top: 2px;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(44px, 1fr));
+ 
+  gap: 20px;
+  width: 38%;
+  margin: 0 auto;
+
+}
+
+@media (max-width:375px) {
+  .html{
+    min-width: none;
+  }
+  body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+  }
+  #root{
+    margin: auto;
+    min-height: 100vh;
+
+
+  }
+  .container{
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(44px, 1fr));
+    gap: 20px;
+    width: 88%;
+    margin: 0 auto;
+    
+  }
+  .header-title h1{
+    font-size: 1.8rem;
+    letter-spacing: 0.4rem;
+    padding-top: 38px;
+  }
+  .header-title img{
+    height: 24px;
+    width: auto;
+  }
+  .footer{
+    position: relative;
+    top: 90px;
+    font-size: 14px;
+}
+ .container-list p{
+  font-size: 18px;
+ }
+ .header{
+  margin-bottom: 21px;
+ }
 }

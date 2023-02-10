@@ -1,0 +1,85 @@
+.CreateTodo{
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+  border: transparent;
+  border-radius: 4px;
+  
+  height: 54px;
+}
+
+.FormdarkMode{
+  background: var(--Very-Dark-Desaturated-Blue);
+}
+.FormdarkMode div{
+  border: 1px solid var(--Very-Dark-Grayish-Blue-dt);
+      
+
+}
+.FormdarkMode input::placeholder{
+  color:var(--Dark-Grayish-Blue-dt);
+}
+.FormdarkMode .content-new{
+  color: var(--Light-Grayish-Blue-dt);
+}
+
+
+
+.FormlightMode{
+  background: var(--Very-Light-Gray);
+}
+.FormlightMode input::placeholder{
+  color:var(--Dark-Grayish-Blue);
+}
+.FormlightMode div{
+  border: 1px solid var(--Light-Grayish-Blue-dt);
+}
+.FormlightMode .content-new{
+  color: var(--Very-Dark-Blue);
+}
+
+
+
+
+
+
+.content-new {
+
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 400;
+font-size: 18px;
+
+  background: transparent;
+  border: transparent;
+
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 0;
+  
+  height: 54px;
+  width: -webkit-fill-available;
+  
+  caret-color:  hsl(220, 98%, 61%);
+
+
+
+}
+.content-new:focus{
+  outline: none;
+}
+
+
+.CreateIcon{
+  margin-left: 15px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    
+}
+.CreateIcon:hover{
+    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+}

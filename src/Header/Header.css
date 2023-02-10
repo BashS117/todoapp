@@ -1,0 +1,42 @@
+
+.header {
+  margin-bottom:5px ;
+  }
+  .header-title div:hover{
+    cursor: pointer;
+  }
+  
+  .header-background {
+    position: absolute;
+  }
+  .header-background picture img {
+    width: 100vw;
+    height: 240px;
+    object-fit: cover;
+  }
+  .header-title {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+    width: 38%;
+    min-width: 320px;
+  
+  }
+  
+  .header-title h1 {
+    color: var(--Very-Light-Gray);
+    font-size: 2.5rem;
+    letter-spacing: 1.2rem;
+    padding-top: 22px;
+  }
+  @media (max-width:375px) {
+    .header-background picture img {
+     
+      object-fit: fill;
+    }
+  
+
+    
+  }

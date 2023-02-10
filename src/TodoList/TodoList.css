@@ -1,0 +1,124 @@
+
+.container-list {
+    color: var(--Very-Dark-Grayish-Blue-dt);
+
+    border-radius: 4px;
+    min-width: 320px;
+    
+    height: auto;
+
+   
+
+  }
+  .darkMode{
+    background: var(--Very-Dark-Desaturated-Blue);
+    box-shadow: 1px 3px 14px 1px hsl(240, 23%, 6%);
+    -webkit-box-shadow: 1px 3px 34px 1px hsl(240, 23%, 6%);
+    -moz-box-shadow: 1px 3px 14px 1px hsl(240, 23%, 6%);
+
+
+
+  }
+  .darkMode p{
+    color: var(--Light-Grayish-Blue-dt);
+  }
+  .darkMode .TextItem-p--completed{
+    color: var(--Very-Dark-Grayish-Blue-dt);    
+
+  }
+  .darkMode  ul li:not(:first-child){
+    border-top: 1px solid  var(--Very-Dark-Grayish-Blue-dtj)
+  
+  }
+
+  .darkMode .TodoItem .Icon{
+    border: 1px solid var(--Very-Dark-Grayish-Blue-dtj);
+  }
+  .darkMode .Icon:hover {
+
+    border: 1px solid rgb(93, 190, 255);
+}
+.darkMode .options{
+  border-top: 1px solid var(--Very-Dark-Grayish-Blue-dtj);
+  color:  var(--Very-Dark-Grayish-Blue-dt);
+
+}
+.darkMode .content-options--inactive {
+  color: var(--Dark-Grayish-Blue-dt); 
+
+
+}
+.darkMode .content-options--inactive:hover{
+  color:var(--Light-Grayish-Blue-hover); 
+}
+.darkMode .clear-completed-todo:hover{
+  color:var(--Light-Grayish-Blue-hover); 
+
+}
+
+
+
+
+
+  .lightMode{
+    background:  var(--Very-Light-Gray );
+    box-shadow: 1px 3px 14px 1px hsl(227, 13%, 78%);
+    -webkit-box-shadow: 1px 3px 34px 1px hsl(227, 13%, 78%);
+    -moz-box-shadow: 1px 3px 14px 1px hsl(227, 13%, 78%);
+
+
+  }
+  .lightMode p{
+    color: var(--Very-Dark-Grayish-Blue-dt);
+  }
+  .lightMode .TextItem-p--completed{
+    color: var(--Light-Grayish-Blue-dt);    
+  }
+  .lightMode  ul li:not(:first-child){
+    border-top: 1px solid  var(--Light-Grayish-Blue-dt);
+  }
+  .lightMode .TodoItem .Icon{
+    border: 1px solid var(--Light-Grayish-Blue-dt);
+  }
+  .lightMode .Icon:hover {
+
+    border: 1px solid rgb(93, 190, 255);
+}
+  .lightMode .options{
+    border-top: 1px solid var(--Light-Grayish-Blue-dt);
+    color:  var(--Dark-Grayish-Blue);
+
+  }
+  .lightMode .content-options--inactive {
+    color: var(--Dark-Grayish-Blue); 
+  }
+  .lightMode .content-options--inactive:hover{
+    color:var(--Very-Dark-Grayish-Blue-dtj); 
+  }
+  .lightMode .clear-completed-todo:hover{
+    color:var(--Very-Dark-Grayish-Blue-dtj); 
+  
+  }
+  
+
+  
+.container-list ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container-list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .container-list p{
+    text-align: left;
+    margin-left: 26px;
+    margin-right: auto;
+  }
+
+  

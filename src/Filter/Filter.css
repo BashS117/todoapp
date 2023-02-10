@@ -1,0 +1,14 @@
+.content-options_all--active{
+    color:hsl(220, 98%, 61%);
+}
+.content-options a{
+     margin-left: 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+a:link { text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}

@@ -1,0 +1,6 @@
+.clear-completed-todo{
+    text-align: end;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
