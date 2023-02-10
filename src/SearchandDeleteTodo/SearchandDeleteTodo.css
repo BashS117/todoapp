@@ -24,7 +24,7 @@
 @media (max-width:375px) {
     .content-options{
         position: absolute;
-        bottom: -56px;
+        bottom: -62px;
         display: flex;
         align-items: center;
         justify-content: center;
