@@ -103,9 +103,14 @@ body {
     font-size: 14px;
 }
  .container-list p{
-  font-size: 18px;
+  font-size: 12px;
+  margin-left: 14px;
  }
  .header{
   margin-bottom: 21px;
+ }
+ .x img{
+  height: 12px;
+  width: auto;
  }
 }
