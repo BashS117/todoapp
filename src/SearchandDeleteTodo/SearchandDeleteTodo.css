@@ -41,3 +41,25 @@
     }
     
 }
+
+
+@media (max-width:393px) {
+    .content-options{
+        position: absolute;
+        bottom: -62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:var(--Very-Dark-Desaturated-Blue);
+        height: 45px;
+        width: 345px;
+        padding-left: 0;
+        margin: 0;
+        border-radius: 4px;
+
+    }
+    .lightMode .content-options{
+    background-color: var(--Very-Light-Gray );
+    }
+    
+}
