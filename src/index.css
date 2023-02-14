@@ -122,7 +122,7 @@ body {
 }
 
 
-@media (max-width:393px) {
+@media(min-width:376px) and (max-width:395px) {
   .html{
     min-width: none;
   }

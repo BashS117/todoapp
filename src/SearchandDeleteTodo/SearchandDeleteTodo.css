@@ -30,7 +30,7 @@
         justify-content: center;
         background-color:var(--Very-Dark-Desaturated-Blue);
         height: 45px;
-        width: 328px;
+        width: 100%;
         padding-left: 0;
         margin: 0;
         border-radius: 4px;
@@ -43,7 +43,7 @@
 }
 
 
-@media (max-width:393px) {
+@media(min-width:376px) and (max-width:395px) {
     .content-options{
         position: absolute;
         bottom: -62px;
@@ -52,7 +52,7 @@
         justify-content: center;
         background-color:var(--Very-Dark-Desaturated-Blue);
         height: 45px;
-        width: 345px;
+        width: 100%;
         padding-left: 0;
         margin: 0;
         border-radius: 4px;
