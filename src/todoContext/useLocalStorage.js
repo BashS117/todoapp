@@ -11,12 +11,29 @@ function useLocalStorage(itemName, initialValue){
   {text: 'Complete Todo App on Frontend Mentor', completed: false},
 ];
 
-    const [error, setError]= React.useState(false);
-    const [loading, setLoading]= React.useState(true);
-  
-    const [item, setItem]= React.useState(initialValue);
-  
-  
+    const [state,dispatch]=React.useReducer(reducer,initialState({initialValue}));
+    const {
+      error,
+      loading,
+      item,
+    }=state;
+
+
+    //action creators
+
+    const onError = (error)=>{
+      dispatch({type: actionTypes.error, payload:error})
+    }
+    const onSuccess = (Item)=>{
+      dispatch({type:actionTypes.success, payload: Item})
+    }
+    const onSave = (Item)=>{
+      dispatch({type:actionTypes.save, payload: Item})
+    }
+    
+
+
+
     React.useEffect(()=>{
       setTimeout(()=>{
       try{
@@ -30,11 +47,11 @@ function useLocalStorage(itemName, initialValue){
         }else {
           parsedItem= JSON.parse(localStorageItem)
         }
-      
-        setItem(parsedItem);
-        setLoading(false);
+      onSuccess(parsedItem)
+        // setItem(parsedItem);
+        // setLoading(false);
       } catch(error){
-        setError(error);
+        onError(error);
   
       }
       },1000);
@@ -47,10 +64,12 @@ function useLocalStorage(itemName, initialValue){
     const saveItem= (newItem)=>{
       try{
         const stringifiedItem=JSON.stringify(newItem);
-      localStorage.setItem(itemName, stringifiedItem);
-      setItem(newItem);
+        localStorage.setItem(itemName, stringifiedItem);
+        onSave(newItem)
+        // setItem(newItem);
       }catch(error){
-        setError(error);
+         onError(error);
+        // setError(error);
       }
     };
   
@@ -62,5 +81,38 @@ function useLocalStorage(itemName, initialValue){
     };
   
   };
+
+  const initialState =({initialValue})=>({ 
+    error:false,
+    loading:true,
+    item: initialValue,
+    
+  });
+
+  const actionTypes={
+      error: 'ERROR',
+      success: 'SUCCESS',
+      save: 'SAVE',
+  }
+  const reducerObject = (state,payload)=>({
+   [actionTypes.error]: {
+    ...state,
+    error: true,
+   },
+   [actionTypes.success]:{
+    ...state,
+    error:false,
+    loading: false,
+    item: payload
+   },
+   [actionTypes.save]:{
+    ...state,
+    item: payload
+   }
+  });
+
+  const reducer = (state, action)=>
+    reducerObject(state,action.payload)[action.type]||state;
+  
 
   export {useLocalStorage};
