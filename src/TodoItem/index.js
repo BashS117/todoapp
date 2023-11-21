@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './TodoItem.css';
 import iconCheck from '../assets/iconCheck.svg'
 import iconCross from '../assets/iconCross.svg'
+import { Draggable } from '@hello-pangea/dnd';
+
 
 const TodoItem = (props) => {
   const [showDelete, setShowDelete] = useState(false);
@@ -21,7 +23,11 @@ const TodoItem = (props) => {
   //     alert("borraste el todo" + props.text);
   // }
   return (
-    <li className='TodoItem' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <Draggable key={props.text} draggableId={props.text} index={props.index}>
+   {(draggableProvided)=>( <li {...draggableProvided.draggableProps} 
+   ref={draggableProvided.innerRef}
+   {...draggableProvided.dragHandleProps}
+   className='TodoItem' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <span 
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}
@@ -47,7 +53,8 @@ const TodoItem = (props) => {
             title="Turn on dark mode"
           />
       </span>
-    </li>
+    </li>)}
+    </Draggable>
   );
 }
 export {TodoItem};

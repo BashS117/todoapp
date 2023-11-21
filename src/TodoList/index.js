@@ -1,18 +1,26 @@
 import React from 'react';
 import { SearchandDeleteTodo } from '../SearchandDeleteTodo';
 import { TodoContext } from '../todoContext';
+import { Droppable } from '@hello-pangea/dnd';
+
+
 import './TodoList.css';
 const TodoList = (props) => {
     const {darkMode}= React.useContext(TodoContext);
     return (
         
+       
         <section 
-        
-        
         className={`${darkMode===false ? "lightMode container-list":"darkMode container-list"} `}>
-            <ul>
+         <Droppable droppableId='tasks'>
+              { (droppableProvided)=> ( 
+              <ul {...droppableProvided.droppableProps}
+                  ref={droppableProvided.innerRef}
+              >
                 {props.children}
-            </ul>
+                {droppableProvided.placeholder}
+            </ul>) }
+            </Droppable>   
             <SearchandDeleteTodo
 
 

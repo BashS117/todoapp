@@ -8,14 +8,18 @@ import {Header} from "../Header";
 import { Footer } from "../Footer";
 
 import { TodoContext } from '../todoContext';
-
+import { DragDropContext } from '@hello-pangea/dnd';
 function AppUI () {
+
+
+
  const {
   error,
   loading,
   filteredTodos,
   toggleCompleteTodo,
   deleteTodos,
+  reorder,
   darkMode,
   }= React.useContext(TodoContext);
 
@@ -28,8 +32,19 @@ function AppUI () {
       <main className="container ">
         {/* <input placeholder="cebolla" /> */}
         <CreateTodoButton/>
-
-           <TodoList
+      <DragDropContext onDragEnd={(result)=>{
+        console.log(result)
+        const {source, destination}= result;
+        if(!destination){
+          return;
+        }
+        if(source.index === destination.index
+          && source.droppableId === destination.droppableId){
+          return;
+        }
+    reorder(filteredTodos,source.index,destination.index)
+     }   }>
+             <TodoList          
           //  leftTodos={leftTodos}
            // filterAll={filterAll}
            // filterActive={filterActive}
@@ -40,9 +55,10 @@ function AppUI () {
                {loading && <p>Estamos cargando no desesperes</p>}
                {(!loading && !filteredTodos.length) && <p>Crea tU primer ToDo</p>}
   
-             {filteredTodos.map(todo => (
-               <TodoItem 
-               key={todo.text}
+             {filteredTodos.map((todo, index) => (
+              <TodoItem 
+              index={index}
+              key={todo.text}
                text={todo.text} 
                completed={todo.completed}
                onComplete={()=>toggleCompleteTodo(todo.text)}
@@ -50,6 +66,7 @@ function AppUI () {
                />
              ))}
            </TodoList>
+           </DragDropContext>
       </main>
       <Footer />
 

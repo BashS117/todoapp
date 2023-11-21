@@ -100,6 +100,15 @@ function TodoProvider (props){
         saveTodos(newTodos);
       };
         
+      //Reorder List
+
+      const reorder =(list, startIndex,endIndex)=>{
+        const result = [...list];
+        const [removed]= result.splice(startIndex,1);
+        result.splice(endIndex,0,removed);
+
+        return result;
+      }
 return(
     <TodoContext.Provider 
     
@@ -121,6 +130,7 @@ return(
 
         setDarkMode,
         darkMode,
+        reorder
     
 
     }}>
