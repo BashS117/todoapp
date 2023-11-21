@@ -21,6 +21,7 @@ function AppUI () {
   deleteTodos,
   reorder,
   darkMode,
+  saveItem
   }= React.useContext(TodoContext);
 
 
@@ -42,8 +43,9 @@ function AppUI () {
           && source.droppableId === destination.droppableId){
           return;
         }
-    reorder(filteredTodos,source.index,destination.index)
-     }   }>
+        reorder(filteredTodos, source.index, destination.index);
+       
+             }   }>
              <TodoList          
           //  leftTodos={leftTodos}
            // filterAll={filterAll}
